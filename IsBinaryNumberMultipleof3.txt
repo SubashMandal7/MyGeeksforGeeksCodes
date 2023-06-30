@@ -1,0 +1,24 @@
+class Solution {
+    int isDivisible(String s) {
+        int n = s.length();
+        int oddCount = 0;
+        int evenCount = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (s.charAt(i) == '1') {
+                if (i % 2 == 0) {
+                    oddCount++;
+                } else {
+                    evenCount++;
+                }
+            }
+        }
+
+        int difference = oddCount - evenCount;
+        if (difference % 3 == 0) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+}
